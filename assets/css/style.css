@@ -6,6 +6,7 @@
 
 body {
 	background-color: #eeeeee;
+	scroll-behavior: smooth;
 }
 
 nav {
