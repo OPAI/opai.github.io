@@ -23,7 +23,7 @@ nav {
 }
 
 footer {
-	margin-top:4%;
+	margin-top:1%;
 	padding-top: 1%;
 	padding-bottom: 1%;
 	text-align: center;
@@ -101,6 +101,10 @@ footer {
 	color: inherit;
 }
 
+#top {
+	display: none;
+}
+
 .itemOp {
 	color:white;
 	font-weight: bold;
@@ -128,5 +132,17 @@ footer {
 
 		footer {
 			font-size: 80%;
+		}
+
+		#top {
+				position: fixed;
+				display: block;
+			  z-index: 99999999;
+		}
+
+		#top img {
+				margin-top: 10%;
+				margin-left: 10%;
+				width:70%;
 		}
 }
