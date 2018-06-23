@@ -1,0 +1,95 @@
+header {
+    $font-size-countdown: 30px;
+
+    @extend %display-flex-cc-c;
+
+    height: calc(100vh - #{$nav-height});
+    background-color: whitesmoke;
+    background-image: url(../images/salvador-background-4.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center bottom;
+    position: relative;
+
+    * {
+        z-index: 1;
+    }
+
+    &::before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba($opai-blue, .4);
+        z-index: 0;
+    }
+
+    #logo {
+        width: 90%;
+        max-width: 600px;
+        margin-bottom: 20px;
+    }
+
+    #eventdate {
+        font-size: 32px;
+        font-family: $font-family-3;
+        color: $color-2;
+        position: absolute;
+        bottom: calc(10% + #{$font-size-countdown} + 5%);
+        text-align: center;
+
+        @include responsive(mobile) {
+            font-size: 26px;
+            padding: 0 16px;
+        }
+    }
+
+    #countdown {
+        font-family: digital7;
+        font-size: $font-size-countdown;
+        font-weight: 600;
+        position: absolute;
+        bottom: 10%;
+        color: $countdown-color;
+        text-align: center;
+
+        @include responsive(mobile) {
+            font-size: 18px;
+            width: 100%;
+            padding: 0 16px;
+        }
+    }
+
+    #opener {
+        display: none;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 30px;
+
+        path {
+            fill: $base-color;
+        }
+        
+        @include responsive(mobile) {
+            display: block;
+        }
+    }
+    
+    @include responsive(mobile) {
+        $margin: 12px;
+        height: 100vh;
+
+        #logo {
+            margin-bottom: $margin;
+        }
+
+        #eventdate, #countdown {
+            position: relative !important;
+            margin: $margin 0 !important;
+            bottom: 0 !important;
+        }
+    }
+}

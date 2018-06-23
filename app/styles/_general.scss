@@ -1,0 +1,193 @@
+//############################################
+// Placeholders
+//############################################
+
+%display-flex {
+    display: flex;
+}
+
+%display-flex-cc {
+    @extend %display-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%display-flex-cc-c {
+    @extend %display-flex-cc;
+    flex-direction: column;
+}
+
+//############################################
+// General Styles
+//############################################
+
+*, * * {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: $color-link;
+}
+
+.paragraph {
+    font-size: $font-size-2;
+    color: $color-1;
+    font-family: $font-family-2;
+    line-height: 1.5em;
+    margin-top: 16px;
+}
+
+.section {
+    min-height: 100vh;
+    background: whitesmoke;
+    padding: 30px 10%;
+    
+    transform: translateZ(0);
+    transition: transform 0.6s ease-in-out;
+    backface-visibility: hidden;
+
+    &-small {
+        min-height: 50vh;
+    }
+
+    &-bgw {
+        background: white;
+    }
+
+    h1 {
+        text-align: center;
+        font-family: $font-family-3;
+        font-size: $font-size-3;
+        color: $base-color;
+        padding: 16px 0;
+    }
+}
+
+.mid-section {
+    height: 46vh;
+    background: whitesmoke;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+
+    &-blue::before { background: rgba($opai-blue, .4); }
+    &-red::before { background: rgba($opai-red, .4); }
+    &-green::before { background: rgba($opai-green, .4); }
+    &-yellow::before { background: rgba($opai-yellow, .4); }
+    
+    &::before {
+        content: " ";
+        width: 100vw;
+        height: 100vh;
+        display: block;
+        z-index: 0;
+    }
+
+    &-1 { background-image: url(../images/salvador-background-1.jpg) }
+    &-2 { background-image: url(../images/salvador-background-3.jpg) }
+    &-3 { background-image: url(../images/salvador-background-2.jpg) }
+}
+
+.cards {
+    @extend %display-flex-cc;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    min-height: 80vh;
+}
+
+.section-small .cards {
+    min-height: 25vh;
+}
+
+.card {
+    width: 90%;
+    max-width: 400px;
+    border: 2px solid $color-1;
+    border-radius: 4px;
+    margin: 5px;
+    box-shadow: 0 1px 8px 0px lightgrey;
+    min-height: 550px;
+    
+    &-blue {
+        border-color: $opai-blue;
+        .card-title { border-top-color: $opai-blue; }
+        .card-title { color: $opai-blue; }
+    }
+    &-red {
+        border-color: $opai-red;
+        .card-title { border-top-color: $opai-red; }
+        .card-title { color: $opai-red; }
+    }
+    &-yellow {
+        border-color: $opai-yellow;
+        .card-title { border-top-color: $opai-yellow; }
+        .card-title { color: $opai-yellow; }
+    }
+    &-green {
+        border-color: $opai-green;
+        .card-title { border-top-color: $opai-green; }
+        .card-title { color: $opai-green; }
+    }
+
+    &-photo {
+        width: 100%;
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    &-title {
+        border-top: 4px solid $color-1;
+        font-size: $font-size-1;
+        font-family: $font-family-2;
+        color: $base-color;
+        padding: 12px;
+    }
+
+    &-content {
+        padding: 0 12px 12px 12px;
+        font-size: $font-size-2;
+        font-family: $font-family-2;
+        line-height: 1.4em;
+        color: $color-1;
+    }
+}
+
+.c {
+    &green { color: $opai-green; }
+    &yellow { color: $opai-yellow; }
+    &red { color: $opai-red; }
+    &blue { color: $opai-blue; }
+}
+//############################################
+// State / Condition Styles
+//############################################
+
+.underlinable {
+    position: relative;
+    text-decoration: none;
+
+    &:hover:before {
+        visibility: visible;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        bottom: -6px;
+        left: 0;
+        background-color: white;
+        visibility: hidden;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+      }
+}

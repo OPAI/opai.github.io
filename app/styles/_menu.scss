@@ -1,0 +1,83 @@
+.menu {
+    @extend %display-flex-cc;
+    z-index: 2;
+    position: sticky;
+    top: 0;
+    background: $base-color;
+    height: $nav-height;
+    box-shadow: 0px 0px 14px 2px $shadow-color;
+
+    li {
+        display: inline-block;
+        font-family: $font-family-2;
+        margin: 16px;
+
+        a {
+            color: $base-color-contrast;
+        }
+    }
+
+    #menu-logo {
+        position: absolute;
+        left: 20px;
+        width: 120px;
+    }
+
+    #closer {
+        display: none;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 30px;
+
+        svg {
+            width: 30px;
+            height: 30px;
+        }
+        
+        path {
+            fill: $base-color-contrast;
+        }
+    }
+
+    @include responsive(mobile) {
+        display: none;
+
+        #menu-logo {
+            position: absolute;
+            left: 10px;
+            top:10px;
+            width: 100px;
+        }
+
+        &.active {
+            display: block;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            height: 100vh;
+
+            ul {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                height: 100vh;
+            }
+
+            li {
+                display: block;
+                height: 35px;
+                line-height: 35px;
+                font-size: $font-size-1;
+                font-family: $font-family-3;
+            }
+        }
+
+        #closer {
+            display: block;
+        }        
+    }
+}

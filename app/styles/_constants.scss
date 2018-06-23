@@ -1,0 +1,32 @@
+//Sizes
+$nav-height: 76px;
+
+//Font Size
+$font-size-1: 24px;
+$font-size-2: 18px;
+$font-size-3: 32px;
+
+//Font Families
+$font-family-1: OpenSansRegular, sans-serif;
+$font-family-2: OpenSansSemibold, sans-serif;
+$font-family-3: Lobster, $font-family-2;
+
+//Colors
+$opai-red: #EE224B;
+$opai-green: #0BA97A;
+$opai-blue: #403F9A;
+$opai-yellow: #F78F20;
+
+$color-1: #444;
+$color-2: #fff;
+$color-4: whitesmoke;
+
+$base-color: $color-1;
+$base-color-contrast: $color-2;
+$color-link: $opai-blue;
+$color-link-visited: $opai-blue;
+$countdown-color: lighten($base-color, 20);
+$shadow-color: rgba(#444, .5);
+
+//Media Queries
+$mobile: all and (min-width: 400px);
