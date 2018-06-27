@@ -1,6 +1,6 @@
 .menu {
     @extend %display-flex-cc;
-    z-index: 2;
+    z-index: 9;
     position: sticky;
     top: 0;
     background: $base-color;

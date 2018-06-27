@@ -46,21 +46,25 @@ a {
     transform: translateZ(0);
     transition: transform 0.6s ease-in-out;
     backface-visibility: hidden;
-
+    
     &-small {
         min-height: 50vh;
     }
-
+    
     &-bgw {
         background: white;
     }
-
+    
     h1 {
         text-align: center;
         font-family: $font-family-3;
         font-size: $font-size-3;
         color: $base-color;
         padding: 16px 0;
+    }
+    
+    @include responsive(mobile) {
+        padding: 30px 10px;
     }
 }
 
@@ -72,7 +76,7 @@ a {
     background-position: center;
     background-attachment: fixed;
     overflow: hidden;
-
+    
     &-blue::before { background: rgba($opai-blue, .4); }
     &-red::before { background: rgba($opai-red, .4); }
     &-green::before { background: rgba($opai-green, .4); }
@@ -85,7 +89,7 @@ a {
         display: block;
         z-index: 0;
     }
-
+    
     &-1 { background-image: url(../images/salvador-background-1.jpg) }
     &-2 { background-image: url(../images/salvador-background-3.jpg) }
     &-3 { background-image: url(../images/salvador-background-2.jpg) }
@@ -96,6 +100,7 @@ a {
     flex-wrap: wrap;
     margin-top: 20px;
     min-height: 80vh;
+    align-items: stretch;
 }
 
 .section-small .cards {
@@ -103,42 +108,78 @@ a {
 }
 
 .card {
-    width: 90%;
+    width: 100%;
     max-width: 400px;
-    border: 2px solid $color-1;
+    border: 4px solid $color-1;
     border-radius: 4px;
     margin: 5px;
     box-shadow: 0 1px 8px 0px lightgrey;
     min-height: 550px;
     
+    &-small {
+        max-width: 340px;
+    }
+    
     &-blue {
         border-color: $opai-blue;
-        .card-title { border-top-color: $opai-blue; }
-        .card-title { color: $opai-blue; }
+        .card-title { 
+            border-top-color: $opai-blue; 
+            color: $opai-blue;
+            
+            &-background {
+                color: white;
+                background: $opai-blue;
+            }
+        }
     }
+    
     &-red {
         border-color: $opai-red;
-        .card-title { border-top-color: $opai-red; }
-        .card-title { color: $opai-red; }
+        .card-title { 
+            border-top-color: $opai-red; 
+            color: $opai-red;
+            
+            &-background {
+                color: white;
+                background: $opai-red;
+            }
+        }
     }
+    
     &-yellow {
         border-color: $opai-yellow;
-        .card-title { border-top-color: $opai-yellow; }
-        .card-title { color: $opai-yellow; }
-    }
-    &-green {
-        border-color: $opai-green;
-        .card-title { border-top-color: $opai-green; }
-        .card-title { color: $opai-green; }
+        .card-title { 
+            border-top-color: $opai-yellow; 
+            color: $opai-yellow;
+            
+            &-background {
+                color: white;
+                background: $opai-yellow;
+            }
+        }
     }
 
+    &-green {
+        border-color: $opai-green;
+        .card-title { 
+            border-top-color: $opai-green; 
+            color: $opai-green;
+            
+            &-background {
+                color: white;
+                background: $opai-green;
+            }
+        }
+    }
+    
     &-photo {
         width: 100%;
         height: 300px;
         background-size: cover;
         background-position: center;
+        background-repeat: no-repeat;
     }
-
+    
     &-title {
         border-top: 4px solid $color-1;
         font-size: $font-size-1;
@@ -146,10 +187,10 @@ a {
         color: $base-color;
         padding: 12px;
     }
-
+    
     &-content {
         padding: 0 12px 12px 12px;
-        font-size: $font-size-2;
+        font-size: $font-size-4;
         font-family: $font-family-2;
         line-height: 1.4em;
         color: $color-1;
@@ -162,6 +203,38 @@ a {
     &red { color: $opai-red; }
     &blue { color: $opai-blue; }
 }
+
+#go-top {
+    @extend %display-flex-cc;
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 30px;
+    z-index: 2;
+    cursor: pointer;
+    background: linear-gradient(90deg, 
+        $opai-green 25%, 
+        $opai-yellow 25%, 
+        $opai-yellow 50%, 
+        $opai-red 50%, 
+        $opai-red 75%, 
+        $opai-blue 75%, 
+        $opai-blue 100%
+    );
+
+    a {
+        display: inline-flex;
+    }
+
+    polyline {
+        color: white;
+    }
+}
+
+
 //############################################
 // State / Condition Styles
 //############################################
@@ -169,13 +242,13 @@ a {
 .underlinable {
     position: relative;
     text-decoration: none;
-
+    
     &:hover:before {
         visibility: visible;
         -webkit-transform: scaleX(1);
         transform: scaleX(1);
     }
-
+    
     &:before {
         content: "";
         position: absolute;
@@ -189,5 +262,73 @@ a {
         transform: scaleX(0);
         -webkit-transition: all 0.3s ease-in-out 0s;
         transition: all 0.3s ease-in-out 0s;
-      }
+    }
+}
+
+.gradient-bar {
+    &.gradient-bar-top {
+        &:after {
+            top: 0;
+        }
+    }
+
+    &:not(.gradient-bar-top) {
+        &:after {
+            bottom: 0;
+        }
+    }
+
+    &:after {
+        content: ' ';
+
+        height: 4px;
+        width: 100%;
+        position: absolute;
+
+        background: white;
+        background: linear-gradient(90deg, 
+            $opai-green 25%, 
+            $opai-yellow 25%, 
+            $opai-yellow 50%, 
+            $opai-red 50%, 
+            $opai-red 75%, 
+            $opai-blue 75%, 
+            $opai-blue 100%
+        );
+    }
+}
+
+//https://codepen.io/egrucza/pen/yyWGbN
+.button-gradient {
+    display: block;
+    line-height: 50px;
+    height: 50px;
+    width: 186px;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    letter-spacing: 1px;
+    color: white;
+    font-size: 16px;
+    font-family: $font-family-2;
+    text-align: center;
+    
+    &:after {
+        position: absolute;
+        content:'';
+        display: inline-block;
+        background: rgba(59,173,227,1);
+        background: linear-gradient(45deg, $opai-green 0%, $opai-yellow 35%, $opai-red 45%, $opai-blue 100%);
+        height: 50px;
+        width: 372px;
+        z-index: -1;
+        transform: translateX(-280px);
+        transition: transform 400ms ease-in;
+    }
+    
+    &:hover {
+        &:after {
+            transform: translateX(-200px);
+        }
+    }
 }

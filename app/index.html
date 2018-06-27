@@ -7,8 +7,8 @@
     <meta name="msapplication-tap-highlight" content="no">
     
     <!-- Browser`s header background color -->
-    <meta name="theme-color" content="#BE4E4C">
-    <meta name="msapplication-navbutton-color" content="#BE4E4C">
+    <meta name="theme-color" content="#444444">
+    <meta name="msapplication-navbutton-color" content="#444444">
     
     <!-- Robots info -->
     <meta name="robots" content="index">
@@ -20,17 +20,13 @@
     <meta name="author" content="OPAI">    
     <meta name="copyright" content="">    
 
-    <!-- Custom twitter cardbox
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="site address">
-    <meta name="twitter:title" content="site title">
-    <meta name="twitter:description" content="site description">
-    <meta name="twitter:image" content="images/my_image.jpg"> -->
-
-    <!-- Custom Facebook cardbox
-    <meta property="og:title" content="page title">
-    <meta property="og:image" content="images/my_image.jpg">
-    <meta property="og:description" content="site description"> -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@opai" />
+    <meta name="twitter:creator" content="@hugodeiro" />
+    <meta property="og:url" content="http://opai.github.io" />
+    <meta property="og:title" content="Open Projects at IFBA (OPAI)" />
+    <meta property="og:description" content="Página web da Open Projects At IFBA (OPAI)" />
+    <meta property="og:image" content="http://opai.hugodeiro.com/images/logo.png" />
 
     <title>Open Projects at IFBA (OPAI)</title>
     <link rel="shortcut icon" type="image/png" href="images/favicon.png?v=1"/> 
@@ -40,21 +36,29 @@
     <!-- endbuild -->
 </head>
 <body>
-    <header>
+    <header id="header">
         <div id="opener">
             <svg height="25px" version="1.1" viewBox="0 0 25 25" width="25px" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink"><title/><desc/><defs/><g fill="none" fill-rule="evenodd" id="TabBar-Icons" stroke="none" stroke-width="1"><g fill="#000000" id="Hamburger-Round"><path d="M0,4 C0,2.8954305 0.889763236,2 2.00359486,2 L22.9964051,2 C24.10296,2 25,2.88772964 25,4 C25,5.1045695 24.1102368,6 22.9964051,6 L2.00359486,6 C0.897039974,6 0,5.11227036 0,4 L0,4 Z M0,12 C0,10.8954305 0.889763236,10 2.00359486,10 L22.9964051,10 C24.10296,10 25,10.8877296 25,12 C25,13.1045695 24.1102368,14 22.9964051,14 L2.00359486,14 C0.897039974,14 0,13.1122704 0,12 L0,12 Z M0,20 C0,18.8954305 0.889763236,18 2.00359486,18 L22.9964051,18 C24.10296,18 25,18.8877296 25,20 C25,21.1045695 24.1102368,22 22.9964051,22 L2.00359486,22 C0.897039974,22 0,21.1122704 0,20 L0,20 Z" id="Hamburger"/></g></g></svg>
         </div>
         <img id="logo" src="images/logo-crop.png" alt="Logotipo do OPAI" data-efecss="zoomIn">
+        <a href="#" target="_blank" class="button-gradient">
+            Inscrições da Sprint
+        </a>
     </header>
 
-    <nav class="menu">
-        <img src="images/logo-small.png" alt="Logotipo do OPAI" id="menu-logo">
+    <nav class="menu gradient-bar">
+        <img src="images/logo-small.png" 
+            data-efecss="slideInRight"
+            alt="Logotipo do OPAI" 
+            id="menu-logo" 
+            style="display: none;">
         <div id="closer">
             <svg height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M437.5,386.6L306.9,256l130.6-130.6c14.1-14.1,14.1-36.8,0-50.9c-14.1-14.1-36.8-14.1-50.9,0L256,205.1L125.4,74.5  c-14.1-14.1-36.8-14.1-50.9,0c-14.1,14.1-14.1,36.8,0,50.9L205.1,256L74.5,386.6c-14.1,14.1-14.1,36.8,0,50.9  c14.1,14.1,36.8,14.1,50.9,0L256,306.9l130.6,130.6c14.1,14.1,36.8,14.1,50.9,0C451.5,423.4,451.5,400.6,437.5,386.6z"/></svg>
         </div>
         <ul>
             <li class="underlinable"><a class="link-to" href="#who-are-us">Quem Somos</a></li>
             <li class="underlinable"><a class="link-to" href="#what-we-did">O que já fizemos</a></li>
+            <li class="underlinable"><a class="link-to" href="#sprint">Sprint</a></li>
         </ul>
     </nav>
 
@@ -115,8 +119,88 @@
 
     <div class="mid-section mid-section-1 mid-section-green"></div>
 
-    <footer>
-        <span>&copy; Open Projects at IFBA (OPAI) - <span id="year"></span></span>
+    <section class="section section-bgw" id="sprint">
+        <h1 data-efecss="slideInUp">#Sprint</h1> 
+        <p class="paragraph" data-efecss="slideInUp" data-animation-delay="150ms">
+            <img src="images/logo-small.png" width="40px"> Sprint é um evento que tem por objetivo receber 
+            calouros e calouras do curso de Análise e Desenvolvimento de Sistemas do IFBA dando "boas vindas" 
+            de maneira inclusiva através de palestras, worshops e muito bate papo sobre tecnologia. 
+            O evento acontecerá sempre um mês depois do início de cada semestre.
+        </p>
+
+        <p class="paragraph">
+            Para este ano, as atividades serão:
+        </p>
+        
+        <div class="cards">
+            <div class="card card-red card-small" data-efecss="slideInLeft">
+                <h2 class="card-title card-title-background">07 de Junho de 2018</h2>
+
+                <div class="card-photo" data-efecss="fadeIn" data-animation-delay="100ms"
+                    style="background-image: url(images/logo.png)">
+                </div>
+
+                <h2 class="card-title">Git Day</h2>
+
+                <div class="card-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam natus tenetur sint, quo assumenda harum, libero consequatur at labore ea deleniti id. Molestiae illo voluptatibus, repellendus quod doloribus ipsam pariatur?</p>
+                </div>
+            </div>
+            
+            <div class="card card-yellow card-small" data-efecss="slideInLeft">
+                <h2 class="card-title card-title-background">21 de Julho de 2018</h2>
+
+                <div class="card-photo" data-efecss="fadeIn" data-animation-delay="100ms"
+                    style="background-image: url(images/logo.png)">
+                </div>
+                
+                <h2 class="card-title">Vim Day</h2>
+
+                <div class="card-content">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident illo voluptatum quidem nam? Culpa officiis tempore fuga nulla praesentium voluptatibus repellendus nesciunt accusantium facilis quas. Nostrum neque quam ab numquam.</p>
+                </div>
+            </div>
+            
+            <div class="card card-green card-small" data-efecss="slideInLeft">
+                <h2 class="card-title card-title-background">27 de Julho de 2018</h2>
+
+                <div class="card-photo" data-efecss="fadeIn" data-animation-delay="100ms"
+                    style="background-image: url(https://scontent.fssa7-1.fna.fbcdn.net/v/t1.0-9/21314492_1478375855573770_6738721674770937874_n.jpg?_nc_cat=0&_nc_eui2=AeG5cRFl3vZ2ZCk0UNyKrHRuev_LHlD-VegYoV9j3WU5pt6DhE5LemJaWgw5466Wo3ekmhXjfYFMTu91NonsLx9owAsD1yaLEd5kgKExtc5Djg&oh=e5bcd8a23cb3b3cbbf606d13069ce448&oe=5BAD7AFA)">
+                </div>
+
+                <h2 class="card-title">Front-end Day</h2>
+                
+                <div class="card-content">
+                    <p>A palestra "Front-end Day" tem como foco principal apresentar boas práticas e discutir problemas relacionados à performance do front-end de aplicações na web, buscando levar suas páginas web ao caminho crítico de renderização.</p>
+                    
+                    <br/>
+
+                    <p>O palestrante, Hugo Deiró, é Analista de Sistemas e Técnico em Informática pelo Instituto Federal da Bahia. Atualmente, atuando como Técnico de Sistemas III da Ericsson Inovação, Hugo tem trabalhado com sistemas de telecomunicações.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="go-top" 
+        data-efecss="zoomIn"
+        style="display: none">
+        <a href="#header" class="link-to">
+            <svg fill="none" height="40" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="40" xmlns="http://www.w3.org/2000/svg"><polyline points="18 15 12 9 6 15"/></svg>
+        </a>
+    </div>
+
+    <div class="mid-section mid-section-2 mid-section-red"></div>
+
+    <footer class="gradient-bar gradient-bar-top">
+        <span class="pill">
+            &copy; 
+            <span class="cgreen">Open</span> 
+            <span class="cyellow">Projects</span> 
+            <span class="cred">at</span> 
+            <span class="cblue">IFBA</span> 
+            - <img src="images/logo-small.png" width="40px"> 
+            <span id="year"></span>
+        </span>
     </footer>
     
     <!-- build:js-->
